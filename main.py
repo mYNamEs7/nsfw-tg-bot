@@ -52,13 +52,6 @@ async def chat_with_image_handler(message: Message):
     global is_chat
     is_chat = False
 
-# @dp.message(Command("iter_count"))
-# async def send_photo_handler(message: Message):
-#     try:
-#         pipe.num_inference_steps = int(message.text.removeprefix("/iter_count "))
-#     except Exception as e:
-#         await message.reply(f"Произошла ошибка: {str(e)}")
-
 
 async def main():
     bot = Bot(token=TOKEN, default=DefaultBotProperties(parse_mode=ParseMode.HTML))
@@ -67,7 +60,6 @@ async def main():
         BotCommand(command="img", description="Сгенерировать изображение"),
         BotCommand(command="chat_with", description="Чат с персонажем"),
         BotCommand(command="off_chat", description="Чат с персонажем"),
-        # BotCommand(command="iter_count", description="Количество итераций при генерации изображения"),
     ])
 
     await dp.start_polling(bot)

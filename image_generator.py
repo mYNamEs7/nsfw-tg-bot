@@ -45,15 +45,8 @@ def generate_with_reference(pipe, prompt, strength=0):
         prompt=prompt,
         negative_prompt=negative,
         image=Image.open("result.png").convert("RGB"),
-        strength=strength,  # насколько сильно менять сцену, 0.3–0.5 обычно ок
+        strength=strength,  
         num_inference_steps=30,
         guidance_scale=7.5,
     ).images[0]
     return image
-
-# marin_prompt = "Marin Kitagawa in anime style, adult, mature face, long blonde hair, wearing her signature outfit, standing, confident pose, detailed anime style, high quality, 1girl, best quality, masterpiece, very aesthetic, realistic proportions, soft lighting"
-# neg = "loli, child, bad anatomy, deformed, extra limbs"
-# pipe1 = init()
-# img = generate(pipe1, "Marin Kitagawa")
-# img.show()
-# img.save("result.png")
